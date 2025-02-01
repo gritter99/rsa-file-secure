@@ -7,7 +7,7 @@ Gerador e verificador de assinaturas RSA em arquivos.
 
 Passo a passo seria:
 
--[] Implementar Miller-Rabin para gerar primos de 1024 bits.
+-[ ] Implementar Miller-Rabin para gerar primos de 1024 bits.
 
 -[] Gerar chaves RSA (p, q, n, e, d).
 
