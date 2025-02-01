@@ -5,7 +5,7 @@ Trabalho de Segurança Computacional
 Gerador e verificador de assinaturas RSA em arquivos.
 
 
-Passo a passo seria:
+Passo a passo:
 
 - [ ] Implementar Miller-Rabin para gerar primos de 1024 bits
 
