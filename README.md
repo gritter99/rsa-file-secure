@@ -7,15 +7,15 @@ Gerador e verificador de assinaturas RSA em arquivos.
 
 Passo a passo:
 
-- [ ] Implementar Miller-Rabin para gerar primos de 1024 bits
+- [x] Implementar Miller-Rabin para gerar primos de 1024 bits
 
-- [ ] Gerar chaves RSA (p, q, n, e, d)
+- [x] Gerar chaves RSA (p, q, n, e, d)
 
-- [ ] Implementar OAEP (padding e unpadding)
+- [x] Implementar OAEP (padding e unpadding)
 
-- [ ] Implementar cifração/decifração RSA com OAEP
+- [x] Implementar cifração/decifração RSA com OAEP
 
-- [ ] Implementar cálculo de hash SHA-3
+- [x] Implementar cálculo de hash SHA-3
 
 - [ ] Assinar o hash com chave privada e codificar em Base64
 

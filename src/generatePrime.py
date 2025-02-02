@@ -1,6 +1,6 @@
 import secrets
 
-def generate_odd_candidate(bits=1024):
+def generateOddCandidate(bits=1024):
     """
     Gera um número ímpar aleatório de tamanho especificado em bits.
     
@@ -8,10 +8,12 @@ def generate_odd_candidate(bits=1024):
         bits (int): Tamanho desejado em bits (padrão: 1024).
     
     Returns:
-        int: Número ímpar de 'bits'.
+        int: Número ímpar de 'bits' bits.
     """
     candidate = secrets.randbits(bits)
-    return candidate | 1  # Garante que o número seja ímpar
+    candidate |= (1 << (bits - 1)) # para garantir que tenha sempre 'bits' bits (eliminar o caso que o bit mais significativo seja 0)
+    candidate | 1  # para que o número seja ímpar
+    return candidate
 
 def decompose(n_minus_1):
     """
@@ -30,7 +32,7 @@ def decompose(n_minus_1):
         s += 1
     return d, s
 
-def miller_rabin_test(n, a):
+def millerRabinTest(n, a):
     """
     Realiza uma rodada do teste de Miller-Rabin para a base 'a'.
     
@@ -52,7 +54,7 @@ def miller_rabin_test(n, a):
     return False
 
 
-def is_prime(n, k=5):
+def isPrime(n, k=5):
     """
     Verifica se 'n' é provavelmente primo usando o teste de Miller-Rabin com 'k' rodadas.
     
@@ -72,11 +74,11 @@ def is_prime(n, k=5):
     
     for _ in range(k):
         a = secrets.randbelow(n - 3) + 2  # a entre 2 e n-2
-        if not miller_rabin_test(n, a):
+        if not millerRabinTest(n, a):
             return False
     return True
 
-def generate_large_prime(bits=1024, k=5):
+def generateLargePrime(bits=1024, k=5):
     """
     Gera um número primo de 'bits' bits usando o teste de Miller-Rabin.
     
@@ -88,6 +90,6 @@ def generate_large_prime(bits=1024, k=5):
         int: Número primo de 'bits' bits.
     """
     while True:
-        candidate = generate_odd_candidate(bits)
-        if is_prime(candidate, k):
+        candidate = generateOddCandidate(bits)
+        if isPrime(candidate, k):
             return candidate
