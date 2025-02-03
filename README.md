@@ -23,9 +23,9 @@ Passo a passo:
 
 - [x] Testar as etapas (se tiver tempo)
 
-- [ ] Documentar tudo no PDF e preparar a apresentação
+- [x] Documentar tudo no PDF e preparar a apresentação
 
-Exemplo prático:
+Exemplo prático (main.py):
 
 Um usuário (Remetente) deseja enviar um documento confidencial ("confidential.txt") para um Destinatário de forma segura, garantindo:
 
@@ -34,3 +34,9 @@ Um usuário (Remetente) deseja enviar um documento confidencial ("confidential.t
 2. Autenticidade: O destinatário pode confirmar que o documento foi enviado pelo remetente.
 
 3. Integridade: O documento não foi alterado durante a transmissão.
+
+Como rodar o projeto:
+
+- Após clonar o repositório ou baixar a pasta do projeto, é necessário entrar na pasta src
+- Comando para rodar os testes unitários (rsa e miller-rabin): python -m unittest tests.py -v
+- Comando para rodar o exemplo prático: python main.py
