@@ -59,6 +59,15 @@ if __name__ == '__main__':
     q = generateLargePrime(bits=1024, k=5)
     public_key_dest, private_key_dest = generateRsaKeys(p, q)
 
+    print('Número primo p gerado:', p)
+    print('\n')
+    print('Número primo q gerado:', q)
+    print('\n')
+    print('Chave pública gerada:', public_key_dest)
+    print('\n')
+    print('Chave privada gerada:', private_key_dest)
+    print('\n')
+
     # remetente
     p_rem = generateLargePrime(bits=1024, k=5)
     q_rem = generateLargePrime(bits=1024, k=5)
@@ -68,9 +77,13 @@ if __name__ == '__main__':
     with open("confidential.txt", "rb") as file:
         document = file.read()
     ciphertext = rsaEncrypt(document, public_key_dest)
-    print(ciphertext)
+    print('RSA encriptado:', ciphertext)
+    print('\n')
+    
     # remetente assina o arquivo para garantir autenticidade
     signature = signFile("confidential.txt", private_key_rem)
+    print('Assinatura:', signature)
+    print('\n')
 
     # destinatario decifra o arquivo com sua chave privada (confidencialidade):
     decrypted_doc = rsaDecrypt(ciphertext, private_key_dest)
