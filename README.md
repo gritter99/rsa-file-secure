@@ -17,10 +17,20 @@ Passo a passo:
 
 - [x] Implementar cálculo de hash SHA-3
 
-- [ ] Assinar o hash com chave privada e codificar em Base64
+- [x] Assinar o hash com chave privada e codificar em Base64
 
-- [ ] Implementar verificação: decodificar Base64, decifrar assinatura, comparar hashes
+- [x] Implementar verificação: decodificar Base64, decifrar assinatura, comparar hashes
 
-- [ ] Testar as etapas (se tiver tempo)
+- [x] Testar as etapas (se tiver tempo)
 
 - [ ] Documentar tudo no PDF e preparar a apresentação
+
+Exemplo prático:
+
+Um usuário (Remetente) deseja enviar um documento confidencial ("confidential.txt") para um Destinatário de forma segura, garantindo:
+
+1. Confidencialidade: Apenas o destinatário pode ler o documento.
+
+2. Autenticidade: O destinatário pode confirmar que o documento foi enviado pelo remetente.
+
+3. Integridade: O documento não foi alterado durante a transmissão.
